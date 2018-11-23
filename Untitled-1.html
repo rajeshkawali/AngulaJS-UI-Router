@@ -1,0 +1,59 @@
+1.1.1-6
+<main id="flexMain" class="container mergeWidth">
+    <div class="content">		
+		<div class="heading">
+			<div class="row">
+				<h2 class="statement" data-bind="text: getLabel('GUI_[#VIEW_KEY#]_label_heading', 'Select the newspaper you want to subscribe to')"></h2>					
+			</div>
+		</div>			
+		<div class="payment-screen">	  
+			<div class="subcribe-newspaper  scrollable-section">
+			<!-- ko foreach: { data: newsPaperList} -->	
+				<div class="payment-news-group flex-row">					
+					<div class="news-box1" data-bind="command: {id: 'NEWSPAPER_'+ $index()}">
+						<label class="button-select brand">							
+							<input type="checkbox" data-bind="checked: $root.isNewsPaperSelected()[$index()]">
+							<div class="info">
+								<span data-bind="text: $data.name"></span>								
+							</div>							
+						</label>
+					</div>					
+					<div class="news-box2" data-bind="visible: $root.viewDropDown()[$index()]()">
+						<div class="select-type">
+							<div class="dropdown-group-2">
+								<div class="dropdown">
+									<div class="input-bydefault" data-bind="text: $root.displayPriceList()[$index()](), command: {id: 'SPHPRICELIST_'+ $index()}"></div>							
+									<span class="caret" data-bind="command: {id: 'OPENSPHPRICELIST_'+ $index()}"></span>
+									<ul class="dropdown-menu" id="SPHPriceList" data-bind="visible: $root.isOpenList()[$index()]()">                                    
+										<!-- ko foreach: { data: $data.options} -->
+											<li>											
+												<div data-bind="command: {id: 'SPHPRICEId_' + $data.value + '_' +$parentContext.$index()}, text: $data.value"></div>
+											</li> 
+										<!-- /ko -->											
+									</ul>						
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<!-- /ko -->
+			</div>	
+		</div>		
+	</div>	
+	
+	<div class="footer footer-container">
+			<div class="button-zone">
+				<div class="button" data-bind="command: {id: 'FOOTERBACK', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Back', 'Back')}}">
+					<var class="color-1 font-sbold" data-bind="html: cmdRepos.getCmdLabel('FOOTERBACK')"></var>
+				</div>
+			</div>
+			<div class="button-zone">
+				<div class="button kioskbutton-highlighted" data-bind="command: {id: 'FOOTERCONFIRM', type: CMDTYPE.BUTTON,state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Next')}, eppkey:'CONFIRM'}">
+					<var class="color-1 font-sbold" data-bind="html: cmdRepos.getCmdLabel('FOOTERCONFIRM')"></var>
+					<div class="ocbcfooter-step" data-bind="html:getLabel('GUI_[#VIEW_KEY#]_FooterSteps','Step 0 of 0')"></div>
+				</div>
+			</div>
+			<div data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, eppkey: 'CANCEL'}">
+			</div>
+    </div>
+</main>

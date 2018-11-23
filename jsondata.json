@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "Name": "Nitesh",
+      "City": "IC colony",
+      "Country": "Germany"
+    },
+    {
+      "Name": "Rajesh",
+      "City": "Borivali",
+      "Country": "Mexico"
+    },
+    {
+      "Name": "Nishit",
+      "City": "UK",
+      "Country": "Mexico"
+    },
+    {
+      "Name": "Yash",
+      "City": "Kandivai",
+      "Country": "UK"
+    },
+    {
+      "Name": "Swati",
+      "City": "MP",
+      "Country": "Brazil"
+    }
+  ]
+}

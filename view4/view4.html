@@ -1,0 +1,60 @@
+<h2>Statements</h2>
+<select ng-model="selectTT" ng-change="selectCard()">
+<option value="">select</option>
+<option ng-repeat="x in transactionT" value="{{x.transactionType}}">{{x.type}}</option>
+
+</select>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>
+                <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+              Name
+                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+
+            <th>
+                <a href="#" ng-click="sortType = 'accountNo'; sortReverse = !sortReverse">
+              Account
+                <span ng-show="sortType == 'accountNo' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'accountNo' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>Amount</th>
+            <th>
+                <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+              Date
+                <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="x in userList | orderBy:sortType:sortReverse | filter: {transactionType:selectTT}">
+        <tr>
+            <td>{{ $index+1 }}</td>
+            <td>{{ x.name | uppercase }}</td>
+            <td>{{ x.accountNo }}</td>
+            <td>{{ x.amount | currency }}</td>
+            <td>{{ x.date | date: "dd/MM/yyyy" }}</td>
+            <td>{{ x.transactionType }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--
+
+<form name="form">
+
+    Account No :<input ng-model="accountNo" /><br/><br/>
+    Branch :<input ng-model="branch" /><br/><br/> 
+    Total Amount :<input ng-model="amount" />
+
+</form>
+
+-->

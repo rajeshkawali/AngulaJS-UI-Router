@@ -1,0 +1,42 @@
+<h2>User List using $http directive</h2>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="x in myData">
+        <tr>
+            <td>{{ $index+1 }}</td>
+            <td>{{ x.Name | uppercase }}</td>
+            <td>{{ x.Country }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br/>
+<br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="xx in myRecords">
+        <tr>
+            <td>{{ $index+1 }}</td>
+            <td>{{ xx.Name | uppercase }}</td>
+            <td>{{ xx.City }}</td>
+            <td>{{ xx.Country }}</td>
+        </tr>
+    </tbody>
+</table>

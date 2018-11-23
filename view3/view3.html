@@ -1,0 +1,30 @@
+<h2>Balance</h2>
+
+<a ui-sref="body">Body</a>
+<a ui-sref="footer">Footer</a>
+
+<h3>Your Name is : {{name}}</h3>
+<h3>Your Account Number is : {{accountNo}}</h3>
+<b><h4>Date is : {{date}}</h4></b>
+<b><h4>Total Amount is : {{amount}}</h4></b>
+
+<select ng-model="selectCard" ng-change="selectCardType()">
+    <option value=""> select </option>
+    <option value="2">Debit</option>
+    <option value="1">Credit</option>
+</select>
+
+<br/>
+<br/>
+
+<pass-data obj="obj"></pass-data>
+
+<br/><br/>
+
+<my-dialog>Check out the contents, {{name}}</my-dialog>
+
+<br/><br/>
+
+<div ui-view="body"></div>
+<div ui-view="footer"></div>
+

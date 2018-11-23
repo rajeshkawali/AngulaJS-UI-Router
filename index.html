@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Ui Router</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <ul class="nav nav-pills navbar-inverse">
+        <li class="active"><a href="/view0"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li><a href="/view1"><i class="fa fa-list-alt fa-fw"></i>View1</a></li>
+        <li><a href="/view2"><i class="fa fa-list-alt fa-fw"></i>View2</a></li>
+        <li><a href="/view3"><i class="fa fa-list-alt fa-fw"></i>View3</a></li>
+        <li><a href="/view4"><i class="fa fa-list-alt fa-fw"></i>View4</a></li>
+        <li><a href="/view5"><i class="fa fa-list-alt fa-fw"></i>View5</a></li>
+    </ul>
+
+    <div class="container">
+        
+         <ui-view></ui-view>
+         
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="angular-script.js"></script>
+    <script src="view0/view0.js"></script>
+    <script src="view1/view1.js"></script>
+    <script src="view2/view2.js"></script>
+    <script src="view3/view3.js"></script>
+    <script src="view4/view4.js"></script>
+    <script src="view5/view5.js"></script>
+    <script src="view5/view5service.js"></script>
+</body>
+
+</html>
